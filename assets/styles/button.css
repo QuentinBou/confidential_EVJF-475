@@ -1,0 +1,27 @@
+/* BTN */
+#entry-screen {
+  position: absolute;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#enter-btn {
+  font-size: 22px;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #e2725b, #d36b4a);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px #d36b4a;
+  transition: transform 0.3s ease;
+}
+#enter-btn:hover {
+  transform: scale(1.05);
+}

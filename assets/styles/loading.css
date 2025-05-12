@@ -1,0 +1,77 @@
+.loading-container {
+  position: relative;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-circle {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+svg circle {
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+}
+
+#bg {
+  stroke: #222;
+}
+
+#progress {
+  stroke: url(#gradient);
+  stroke-dasharray: 565.48; /* 2πr avec r=90 */
+  stroke-dashoffset: 565.48;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.loading-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.loading-text p {
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 0 0 5px #d36b4a;
+}
+
+#percent {
+  font-size: 28px;
+  color: #e2725b;
+}
+
+.glitch {
+  font-size: 20px;
+  color: white;
+}
+
+/* Canvas */
+#glitch-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  background: black;
+}
+
+.fade-out {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 1s ease, transform 1s ease;
+  pointer-events: none;
+}

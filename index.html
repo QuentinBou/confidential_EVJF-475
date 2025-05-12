@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leah</title>
+    <link rel="stylesheet" href="assets/styles/styles.css" />
+    <link rel="stylesheet" href="assets/styles/button.css" />
+    <link rel="stylesheet" href="assets/styles/loading.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <canvas id="glitch-canvas"></canvas>
+
+    <div id="entry-screen">
+      <button id="enter-btn">Accéder aux données</button>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-container">
+      <div class="loading-circle">
+        <svg width="200" height="200">
+          <defs>
+            <linearGradient id="gradient" x1="1" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#E2725B" />
+              <stop offset="100%" stop-color="#D36B4A" />
+            </linearGradient>
+          </defs>
+          <circle id="bg" cx="100" cy="100" r="90"></circle>
+          <circle id="progress" cx="100" cy="100" r="90"></circle>
+        </svg>
+        <div class="loading-text">
+          <p class="glitch" data-text="LOADING">LOADING</p>
+          <p id="percent">0%</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Folder -->
+    <div id="mainContent">
+      <img
+        src="assets/img/lockedFolder.png"
+        width="30%"
+        id="folderImg"
+        alt="dossier confidentiel"
+        style="display: none"
+      />
+    </div>
+
+    <!-- Contenu principal -->
+
+    <audio id="bg-music" src="assets/music.mp3"></audio>
+  </body>
+</html>
