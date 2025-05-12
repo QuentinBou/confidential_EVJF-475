@@ -70,8 +70,10 @@ function stopGlitchCanvas() {
   canvas.style.display = "none";
   canvas.remove();
   loader.remove();
-  console.log(folderImg);
   folderImg.style.display = "block";
+  setTimeout(() => {
+    folderImg.classList.add("fade-in");
+  }, 500);
 }
 
 enterBtn.addEventListener("click", () => {
@@ -80,6 +82,11 @@ enterBtn.addEventListener("click", () => {
   music.play().catch((err) => console.warn("Autoplay bloqué :", err));
   startLoading();
 });
+
+folderImg.addEventListener("click", (event) => {
+    console.log(event)
+    folderImg.classList.add("slide-out")
+})
 
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);

@@ -1,0 +1,30 @@
+#mainContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  height: 100vh;
+  margin: 0;
+}
+
+#mainContent img {
+  opacity: 0;
+  transform: rotate(-35deg);
+  cursor: pointer;
+}
+
+#mainContent img:hover {
+  transform: rotate(-35deg) scale(1.02);
+  transition: ease-in-out 1s;
+}
+
+.fade-in {
+  opacity: 1 !important;
+  transition: ease-in-out 1s opacity;
+}
+
+.slide-out {
+    transform: rotate(-35deg) translateX(-800px) !important;
+    opacity: 0 !important;
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) all 3s;
+}
