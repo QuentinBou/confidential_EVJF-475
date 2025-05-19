@@ -48,7 +48,7 @@ function startLoading() {
         stopGlitchCanvas();
       }, 800);
     }
-  }, 20);
+  }, 140);
 }
 
 function resizeCanvas() {
