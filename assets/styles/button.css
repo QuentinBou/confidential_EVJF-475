@@ -21,6 +21,7 @@
   font-weight: bold;
   box-shadow: 0 0 10px #d36b4a;
   transition: transform 0.3s ease;
+  overflow: hidden;
 }
 #enter-btn:hover {
   transform: scale(1.05);

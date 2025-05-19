@@ -1,0 +1,18 @@
+.typewriter {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid rgb(255, 255, 255);
+    padding-right: 4px;
+    width: fit-content;
+    animation: blinkCursor 1s step-end infinite;
+    color: red;
+    letter-spacing: 2px;
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  @keyframes blinkCursor {
+    50% {
+      border-color: transparent;
+    }
+  }

@@ -1,6 +1,7 @@
 let percent = 0;
 let animationFrameId;
 
+const body = document.getElementById('body')
 const percentText = document.getElementById("percent");
 const progressCircle = document.getElementById("progress");
 const loader = document.querySelector(".loading-container");
@@ -10,8 +11,23 @@ const entryScreen = document.getElementById("entry-screen");
 const canvas = document.getElementById("glitch-canvas");
 const ctx = canvas.getContext("2d");
 const folderImg = document.getElementById("folderImg");
+const paper = document.getElementById("paper");
+const airship = document.getElementById("airship")
+const arrowContainer = document.getElementById("arrowContainer")
+const arrow = document.getElementById('arrow')
+const infos = document.getElementById('infos')
+const target = document.getElementById("typewriter");
 
 const totalLength = 2 * Math.PI * 90;
+const text = "Fin de communication...";
+let index = 0;
+
+function scrollToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
 
 function startLoading() {
   let percent = 0;
@@ -76,6 +92,34 @@ function stopGlitchCanvas() {
   }, 500);
 }
 
+function handleArrowClick() {
+  paper.classList.remove('show')
+  paper.classList.add('fade-out')
+  setTimeout(() => {
+    airship.style.display = "none";
+    infos.style.display = "none";
+    arrowContainer.style.display = "none";
+    paper.style.display = "none";
+    typeLetter()
+  }, 1200);
+}
+
+function typeLetter() {
+  if (index < text.length) {
+    target.textContent += text.charAt(index);
+    index++;
+    setTimeout(typeLetter, 200);
+  } else {
+    target.style.animation = "none";
+    target.style.border = "none";
+  }
+}
+
+function showPaper() {
+  paper.classList.add("show");
+  body.style.overflow = "none";
+}
+
 enterBtn.addEventListener("click", () => {
   entryScreen.style.display = "none";
   loader.style.display = "flex";
@@ -83,11 +127,21 @@ enterBtn.addEventListener("click", () => {
   startLoading();
 });
 
-folderImg.addEventListener("click", (event) => {
-    console.log(event)
+folderImg.addEventListener("click", () => {
     folderImg.classList.add("slide-out")
+    setTimeout(() => {
+      folderImg.style.display = "none";
+      paper.style.display = "flex";
+      body.style.overflow = "visible";
+      setTimeout(() => {
+        showPaper()
+      }, 200);
+    }, 1000);
 })
 
+arrow.addEventListener("click", handleArrowClick)
+
+scrollToTop()
 resizeCanvas();
 window.addEventListener("resize", resizeCanvas);
 

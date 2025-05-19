@@ -3,14 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Leah</title>
+    <title>Mission: EVJF-475</title>
     <link rel="stylesheet" href="assets/styles/styles.css" />
     <link rel="stylesheet" href="assets/styles/button.css" />
     <link rel="stylesheet" href="assets/styles/loading.css" />
     <link rel="stylesheet" href="assets/styles/folder.css" />
+    <link rel="stylesheet" href="assets/styles/paper.css" />
+    <link rel="stylesheet" href="assets/styles/typing.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="assets/img/favicon/site.webmanifest" />
     <script src="index.js" defer></script>
   </head>
-  <body>
+  <body id="body">
     <canvas id="glitch-canvas"></canvas>
 
     <div id="entry-screen">
@@ -41,12 +47,102 @@
     <div id="mainContent">
       <img
         src="assets/img/lockedFolder.png"
-        width="30%"
         id="folderImg"
         alt="dossier confidentiel"
-        style="display: none;"
+        style="display: none"
       />
+      <div class="paper" id="paper" style="display: none">
+        <img
+          src="assets/img/airship.jpg"
+          alt="embarquement en saah"
+          id="airship"
+        />
+        <div class="infos" id="infos">
+          <h1>🔒 DOSSIER CLASSIFIÉ – NIVEAU 3</h1>
+          <h2>ACCÈS RESTREINT</h2>
+
+          <div class="section-title">Direction des opérations spéciales</div>
+          <div class="entry">
+            <span class="label">Département :</span> Transport international –
+            Zone Inconnue
+          </div>
+
+          <div class="section-title">Détails de mission</div>
+          <div class="entry"><span class="label">Date :</span> ??/??/2025</div>
+          <div class="entry">
+            <span class="label">Destination :</span>
+            <span class="classified">Aaaaaaaaaa, Aaaaa</span>
+          </div>
+          <div class="entry">
+            <span class="label">Départ :</span> Paris, France
+          </div>
+          <div class="entry">
+            <span class="label">Mission :</span> Déplacement festif (code
+            <span class="code">EVJF-475</span>)
+          </div>
+
+          <div class="section-title">Sujet concerné</div>
+          <div class="entry">
+            <span class="label">Nom de code :</span>
+            <span class="code">ALPHA-DELTA-97</span>
+          </div>
+          <div class="entry">
+            <span class="label">Statut :</span> Civil — sécurité standard
+          </div>
+          <div class="entry"><span class="label">Genre :</span> Féminin</div>
+          <div class="entry">
+            <span class="label">Rôle :</span> Invitée d'honneur – événement
+            pré-nuptial
+          </div>
+
+          <div class="section-title">Objectif opérationnel</div>
+          <div class="entry">
+            Transfert discret de l'élément
+            <span class="code">ALPHA-DELTA-97</span> vers zone festive
+            <span class="classified">aaaaaaaaa</span> / SECTEUR ORANGE.
+          </div>
+          <div class="entry note">
+            Vêtements civils requis. Identité réelle conservée. Aucune mention
+            publique autorisée.
+          </div>
+
+          <div class="section-title">Observations</div>
+          <div class="entry note">
+            Mission à caractère social détendu, mais nécessitant coordination,
+            ponctualité et application du protocole
+            <span class="code">EVJF-CONFIDENTIAL</span>.
+          </div>
+
+          <div class="section-title">Note interne</div>
+          <div class="entry note">
+            Toute fuite ou retard compromettra l'effet de surprise et le bon
+            déroulement de l'opération.
+          </div>
+
+          <div class="section-title">Signature</div>
+          <div class="entry">
+            <span class="label">Émis par :</span> UNITE CENTRALE – SECTEUR M –
+            CASIER #873X
+          </div>
+          <div class="entry">
+            <span class="label">Signature numérique :</span>
+            <span class="code">######-REDACTED-######</span>
+          </div>
+        </div>
+        <div class="arrow-container" id="arrowContainer">
+          <img
+            class="arrow"
+            id="arrow"
+            src="assets/img/right-arrow.png"
+            alt="fleche droite"
+          />
+        </div>
+        <br />
+      </div>
+      <div id="typewriter" class="typewriter"></div>
     </div>
+
+    <!-- Paper sheet -->
 
     <!-- Contenu principal -->
 

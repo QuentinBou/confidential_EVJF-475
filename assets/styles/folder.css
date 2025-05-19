@@ -3,19 +3,16 @@
   align-items: center;
   justify-content: center;
   background-color: black;
-  height: 100vh;
+  max-width: 100%;
+  min-height: 100vh;
   margin: 0;
 }
 
-#mainContent img {
+#folderImg {
+  width: 40%;
   opacity: 0;
-  transform: rotate(-35deg);
+  transform: rotateX(0) scale(.5);
   cursor: pointer;
-}
-
-#mainContent img:hover {
-  transform: rotate(-35deg) scale(1.02);
-  transition: ease-in-out 1s;
 }
 
 .fade-in {
@@ -24,7 +21,13 @@
 }
 
 .slide-out {
-    transform: rotate(-35deg) translateX(-800px) !important;
+    transform: rotateX(-360deg) scale(0) !important;
     opacity: 0 !important;
-    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) all 3s;
+    transition: cubic-bezier(0.445, 0.05, 0.55, 0.95) 3s;
+}
+
+@media (max-width: 768px) {
+  #folderImg {
+    width: 90vw;
+  }
 }

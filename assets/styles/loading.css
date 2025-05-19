@@ -67,6 +67,7 @@ svg circle {
   height: 100vh;
   pointer-events: none;
   background: black;
+  overflow: hidden;
 }
 
 .fade-out {
