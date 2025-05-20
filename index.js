@@ -123,6 +123,7 @@ function showPaper() {
 enterBtn.addEventListener("click", () => {
   entryScreen.style.display = "none";
   loader.style.display = "flex";
+  music.loop = true;
   music.play().catch((err) => console.warn("Autoplay bloqué :", err));
   startLoading();
 });
